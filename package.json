@@ -1,0 +1,16 @@
+{
+  "name": "agentrecurit-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "login.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+   /*"url": "http://www.hainabo.com:3000/yunbaba/yunbaba-demo.git"*/
+    "url": "https://github.com/3413474671/agencyrecurit.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

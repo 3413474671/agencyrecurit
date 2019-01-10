@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YUNBABA | Login</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Ladda style -->
+    <link href="css/plugins/ladda/ladda-themeless.min.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+
+                <img src="images/yunbaba-logo2.png" alt="" srcset="">
+
+            </div>
+            <p class="m-t-lg">运巴巴 - 货运调度系统</p>
+            <div class="m-t">
+                <div class="form-group">
+                    <input type="text" id="username" class="form-control" placeholder="账户" required="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="密码" required="">
+                </div>
+                <button type="button" data-style="zoom-in" id="login_btn" class="ladda-button ladda-button-demo btn btn-primary block full-width m-b">进入系统</button>
+                <a href="login.html#"><small>忘记密码</small></a>
+                <a class="m-l" href="login.html#"><small>注册账户</small></a>
+            </div>
+
+            <p class="m-t"> <small>yunbaba & hainabo @ 2017</small> </p>
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+
+    <!-- Sweet alert -->
+    <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
+
+    <script src="js/plugins/jquery-mockjax/jquery.mockjax.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/main.js?v1.0"></script>
+    <script src="./service.mock.js"></script>
+
+    <!-- Ladda -->
+    <script src="js/plugins/ladda/spin.min.js"></script>
+    <script src="js/plugins/ladda/ladda.min.js"></script>
+    <script src="js/plugins/ladda/ladda.jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+
+            // Bind progress buttons and simulate loading progress
+            Ladda.bind('.ladda-button', {
+                callback: function(instance) {
+                    var progress = 0;
+                    var interval = setInterval(function() {
+                        progress = Math.min(progress + Math.random() * 0.1, 1);
+                        instance.setProgress(progress);
+
+                        if (progress === 1) {
+                            login(instance)
+                            clearInterval(interval);
+                        }
+                    }, 200);
+                }
+            });
+
+        });
+
+
+
+        function login(instance) {
+
+            $.getJSON({
+                    url: bathpath + 'v1/user/login',
+                    type: 'post',
+                    data: {
+                        username: $('#username').val(),
+                        password: ''
+                    }
+                })
+                .done(function(data) {
+                    if (ajaxdatacheck(data)) {
+                        if (data.code == 1) {
+                            debugger
+                            swal({
+                                title: '登录成功',
+                                text: '上次登录: 213.44.56.1 , 河南省郑州市电信',
+                                type: "warning"
+                            }, function() {
+                                $.cookie('user', JSON.stringify(data.content.user), {
+                                    expires: 8 / 24
+                                })
+                                window.setTimeout("window.location.href = 'index.html?_" + new Date().getTime() + "'", 200)
+                            })
+
+                        } else {
+                            swal({
+                                title: '出错了',
+                                text: data.errorMsg || data.msg,
+                                type: "warning"
+                            })
+                        }
+                    }
+                })
+                .fail(function(e) {
+                    console.error(e.statusText)
+                })
+                .always(function() {
+                    if (instance)
+                        instance.stop();
+                })
+        }
+    </script>
+</body>
+
+</html>

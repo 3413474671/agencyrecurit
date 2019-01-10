@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AGENTRECURIT | 代理招聘系统</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Sweet Alert -->
+    <link href="css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="dashboard_2.html#">
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Ocean.Ren</strong>
+                             </span> <span class="text-muted text-xs block">金牌会员 <b class="caret"></b></span> </span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li onclick="loadPage('profile.html')"><a href="#">个人资料</a></li>
+                                <li onclick="loadPage('setting-securty.html')"><a href="#">安全设置</a></li>
+                                <li onclick="loadPage('setting-system.html')"><a href="#">系统设置</a></li>
+                                <li class="divider"></li>
+                                <li><a href="login.html">安全登出</a></li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            YBB
+                        </div>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message">Welcome</span>
+                        </li>
+                        <li>
+                            <a href="login.html">
+                                <i class="fa fa-sign-out"></i> 安全退出
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="wrapper wrapper-content">
+                <div class="row wrapper border-bottom white-bg page-heading">
+                    <div class="col-lg-10">
+                        <h2>首页</h2>
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="index.html">首页</a>
+                            </li>
+                            <li class="active">
+                                <strong>订单管理</strong>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-2">
+
+                    </div>
+                </div>
+                <div id="main-body" class="m-t">
+
+                </div>
+                <div class="footer">
+                    <div class="pull-right">
+
+                        <a href="mailto:30192798@qq.com">意见反馈</a>
+                    </div>
+                    <div>
+                        <strong>Copyright</strong> Hainabo Company &copy; 2014-2017
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mainly scripts -->
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <!-- Sweet alert -->
+        <script src="js/plugins/sweetalert/sweetalert.min.js"></script>
+
+        <!-- Custom and plugin javascript -->
+        <script src="js/inspinia.js"></script>
+
+        <script src="js/plugins/jquery-mockjax/jquery.mockjax.min.js"></script>
+
+        <script src="js/jquery.cookie.js"></script>
+
+        <script src="js/main.js"></script>
+        <script src="./service.mock.js"></script>
+        <script src="index.js"></script>
+</body>
+
+</html>

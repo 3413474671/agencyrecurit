@@ -1,0 +1,23 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\softs\\nodejs\\node.exe',
+1 verbose cli   'D:\\softs\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'build' ]
+2 info using npm@1.4.9
+3 info using node@v10.0.0
+4 error Failed to parse json
+4 error Unexpected token / in JSON at position 218
+5 error File: D:\softs\nodejs\agentrecurit-html\package.json
+6 error Failed to parse package.json data.
+6 error package.json must be actual JSON, not just JavaScript.
+6 error
+6 error This is not a bug in npm.
+6 error Tell the package author to fix their package.json file. JSON.parse
+7 error System Windows_NT 6.1.7601
+8 error command "D:\\softs\\nodejs\\node.exe" "D:\\softs\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "build"
+9 error cwd D:\softs\nodejs\agentrecurit-html
+10 error node -v v10.0.0
+11 error npm -v 1.4.9
+12 error file D:\softs\nodejs\agentrecurit-html\package.json
+13 error code EJSONPARSE
+14 verbose exit [ 1, true ]
